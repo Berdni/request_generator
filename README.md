@@ -1,24 +1,31 @@
-# README
+# Тестовое задание RubyOnRails
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Задача
+Создать систему публикации сообщений. Сообщения должны генерироваться по расписанию, длительность создания каждого сообщения - случайная величина, причем необходимо предусмотреть возможность задания интервала в секундах и количества сообщений (для простоты задавать при запуске).
+Доставка сообщений - HTTP-запрос на заданный адрес.
+Необходимо предусмотреть логирование создания, отправки и доставки сообщений.
 
-Things you may want to cover:
+## Установка
 
-* Ruby version
+```bash
+git clone https://github.com/Berdni/request_generator.git
+cd request_generator
 
-* System dependencies
+# Установка зависимостей
+bundle install
 
-* Configuration
+# Подготовка базы данных
+bundle exec rake db:reset
 
-* Database creation
+# Запуска сервера
+bundle exec rails s
 
-* Database initialization
+# Запуска фоновых задач
+sidekiq
+```
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## Как запустить тесты?
+Используются тесты RSpec
+```bash
+bundle exec rspec
+```
